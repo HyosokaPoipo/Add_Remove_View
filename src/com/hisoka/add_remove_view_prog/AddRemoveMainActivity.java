@@ -19,8 +19,6 @@ public class AddRemoveMainActivity extends Activity {
 	LinearLayout ll;
 	private String[] spinnerContent = {"Ikan","Udang","Kepiting","Kerang"};
 	
-	
-	
 	private int count = 0;
 	private int line = 0;
 	@Override
@@ -28,9 +26,7 @@ public class AddRemoveMainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_remove_main);
 			
-		ll = (LinearLayout) findViewById(R.id.main_layout);
-		
-		
+		ll = (LinearLayout) findViewById(R.id.main_layout);	
 		
 	}
 	
@@ -54,23 +50,40 @@ public class AddRemoveMainActivity extends Activity {
 		TextView total = new TextView(this);
 		
 		
+		TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,TableRow.LayoutParams.WRAP_CONTENT);
+		params.setMargins(78, 13, 97, 29);
+		
+		
 		spin.setAdapter(adapter);
 		jenis.setText("Jenis : "+Integer.toString(count));
-		
+		//jenis.setLayoutParams(params);
 		keterangan.setText("Keterangan : ");
 		total.setText("Jumlah(kg) :");
 		
-		row1.setLayoutParams(new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+		//setRunTimeMargin(jenis,45,0,97,27);
 		
-		row1.addView(jenis);
+		row1.setLayoutParams(new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+		//ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams)jenis.getLayoutParams();
+		//mlp.setMargins(37, 13, 17, 0);
+		
+		row1.addView(jenis,params);
 		row1.addView(spin);
 		
 		frame.addView(row1);
 		
 		ll.addView(frame, line);
 		line++;
+		
 	}
 	
+	public static void setRunTimeMargin(View v, int left, int top, int right,
+            int bottom) {
+
+  ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) v
+   .getLayoutParams();
+
+   mlp.setMargins(left, top, right, bottom);
+         }
 	
 	public void deleteItems(View view)
 	{
