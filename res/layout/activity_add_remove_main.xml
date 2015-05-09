@@ -1,0 +1,37 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+    tools:context=".AddRemoveMainActivity" >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    >
+    
+    
+    
+    
+    
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    <Button 
+        android:id="@+id/b_add"
+         android:layout_width="wrap_content"
+    	 android:layout_height="wrap_content"
+    	 android:text="Add"
+    	 android:onClick="addItems"
+        /> 
+        <Button 
+        android:id="@+id/b_del"
+         android:layout_width="wrap_content"
+    	 android:layout_height="wrap_content"
+    	 android:text="Del"
+    	 android:onClick="deleteItems"
+        />     
+    </TableRow>
+</LinearLayout>    
+</ScrollView>
